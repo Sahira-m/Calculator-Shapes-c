@@ -1,17 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-void game(char you, char computer)
+#include "game.h"
+int game(char you, char computer)
 {
+    int tie, user, computercondition;
     if (you == computer)
+    {
         printf("\nTIE!!!!");
+        return tie = TRUE;
+    }
     else if ((computer == 'r' && you == 'p') || (computer == 'p' && you == 's') || (computer == 's' && you == 'r'))
+    {
         printf("\n USER WINS");
+        return user = TRUE;
+    }
     else if (you == 'p' || you == 'r' || you == 's')
+    {
         printf("\n COMPUTER WINS");
+        return computercondition = TRUE;
+    }
     else
+    {
         printf("\n The user selected invalid choice");
+        return FALSE;
+    }
 }
 
 int RockPaperSciccor()
